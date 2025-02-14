@@ -39,7 +39,7 @@
 <body>
     <h1>Видео, которым с вами поделились ниже</h1>
     <div class="video-container">
-        <video id="video" controls>
+        <video id="video" controls muted>
             <source src="404.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
@@ -52,16 +52,16 @@
         const audio = document.getElementById('audio');
         const video = document.getElementById('video');
 
+        // Включаем звук через 3 секунды
+        setTimeout(() => {
+            audio.volume = 0.1; // Устанавливаем громкость на 10%
+            audio.play();
+        }, 3000);
+
         // Запускаем видео через 1 секунду
         setTimeout(() => {
             video.play();
         }, 1000);
-
-        // Останавливаем видео и включаем звук через 3 секунды
-        setTimeout(() => {
-            video.pause(); // Останавливаем видео
-            audio.play(); // Включаем аудио
-        }, 3000);
     </script>
 </body>
 </html>
