@@ -52,8 +52,9 @@
         const audio = document.getElementById('audio');
         const video = document.getElementById('video');
 
-        // Запускаем видео через 1 секунду
+        // Запускаем видео через 1 секунду с включенным звуком
         setTimeout(() => {
+            video.volume = 1; // Устанавливаем громкость видео на максимум
             video.play();
         }, 1000);
 
